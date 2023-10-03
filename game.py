@@ -97,13 +97,14 @@ class Game:
             return
 
 if __name__ == "__main__":
-    moves = sys.argv[1:]   
-    if len(moves) < 3 | len(moves) % 2 == 0:
-        print("Invalid arguments: Number of options must be odd and >= 3")
-    elif (len(moves) != len(set(moves))):
-        print("Invalid arguments: Arguments should be different")
-    else:
-        game = Game(moves)
-        game.make_turn()
+    if len(sys.argv) > 1:
+        moves = sys.argv[1:]   
+        if len(moves) < 3 | len(moves) % 2 == 0:
+            print("Invalid arguments: Number of options must be odd and >= 3")
+        elif (len(moves) != len(set(moves))):
+            print("Invalid arguments: Arguments should be different")
+        else:
+            game = Game(moves)
+            game.make_turn()
 
     
